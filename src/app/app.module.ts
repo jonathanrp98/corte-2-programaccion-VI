@@ -48,6 +48,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import {ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import {PersonasService} from './services/personas.service';
 
 @NgModule({
   declarations: [
@@ -55,6 +57,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     TablaComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     MatToolbarModule,
     MatButtonModule,
@@ -106,7 +109,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     ScrollingModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [PersonasService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

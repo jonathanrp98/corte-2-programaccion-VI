@@ -1,3 +1,9 @@
-table {
-    width: 100%;
-  }
+
+.personas-card{
+  max-height: 350px;
+  margin: 10px;
+}
+.personas-herder-imagen{
+  background-image:url("http://via.placeholder.com/50x50?text=thumb");
+  background-size: cover;
+}
