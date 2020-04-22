@@ -1,16 +1,48 @@
 <mat-grid-list cols="4" rowHeight="400" style="padding: 10px" *ngIf="personas.length > 0 else noData">
-  <mat-grid-tile *ngFor ="let j of personas">
+  
+  <mat-grid-tile>
+    <mat-card class="personas-card">
+      <mat-card-content align="center">
+        <mat-form-field>
+          <input matInput placeholder="Nombre" [formControl]="nombreInput">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Apodo" [formControl]="apodoInput">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Edad" [formControl]="edadInput">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Posición" [formControl]="posicionInput">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Imagen" [formControl]="imagenInput">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Estado" [formControl]="estadoInput">
+        </mat-form-field>
+        <br>
+          <button mat-flat-button color="primary" (click)=guardar()>Guardar</button>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile *ngFor="let j of personas">
     <mat-card class="personas-card">
       <mat-card-header>
         <div mat-card-avatar class="personas-herder-imagen"></div>
         <mat-card-title>{{j.nombre}}</mat-card-title>
         <mat-card-subtitle>{{j.apodo}}</mat-card-subtitle>
       </mat-card-header>
-      <img mat-card-image src="http://via.placeholder.com/200x200?text=Foto+de+jugador" alt="">
-      <mat-card-actions align="end">
-        <button mat-button color="primary">
-          OK
-        </button>
+      <img mat-card-image src="http://via.placeholder.com/200x200?text=Foto+de+jugador"/>
+      <mat-card-content>
+        <strong>Posicion: {{j.posicion}}</strong>
+        <br>
+        <strong>Edad: {{j.edad}}</strong>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button color="primary">Editar</button>
+        <button mat-button color="primary">Eliminar</button>
       </mat-card-actions>
     </mat-card>
   </mat-grid-tile>
@@ -20,5 +52,3 @@
     <h2>No hay registros!</h2>
   </div>
 </ng-template>
-
-

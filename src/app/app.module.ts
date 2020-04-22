@@ -50,6 +50,8 @@ import {MatTreeModule} from '@angular/material/tree';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {PersonasService} from './services/personas.service';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -107,7 +109,8 @@ import {PersonasService} from './services/personas.service';
     MatTreeModule,
     PortalModule,
     ScrollingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [PersonasService],
   bootstrap: [AppComponent]
